@@ -1,0 +1,3 @@
+# ignore IDE and development stuff
+.vscode
+*.pyc
