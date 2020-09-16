@@ -16,6 +16,24 @@ def main(authors, author_list, output_directory):
     """
     print(authors, author_list, output_directory)
 
+    # request author info including counts.
+    # if target file exists, append current count.
+    # if target file does not exist, populate previous time points (years) with year-counts
+    #
+    # Example code:
+    #
+    # a = list(scholarly.scholarly.search_author("Sebastian lapuschkin"))[0]
+    # a.fill(sections=['counts', 'indices', 'publications'])
+    #
+    # extend citation tracking to publications?
+    # create output_dir/authors for authors
+    # and    output_dir/publications for papers (normalize paper file names: no whitespace only ascii no cap.)
+    # treat both equally by appending cites and appearances
+    # first line contains meta info
+    # remaining lines contain date -> value pairs/groups
+    #
+    # later: plotting/graphing
+
 
 if __name__ == '__main__':
     main()
