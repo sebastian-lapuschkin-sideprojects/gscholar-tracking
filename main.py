@@ -32,7 +32,10 @@ def main(authors, author_list, output_directory):
     # first line contains meta info
     # remaining lines contain date -> value pairs/groups
     #
+    # after each run, attempt to remove scholar.log (if not specified otherwise via --keep-logs)
+    #
     # later: plotting/graphing
+
 
 
 if __name__ == '__main__':
