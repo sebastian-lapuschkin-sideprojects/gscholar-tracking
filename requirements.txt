@@ -1,0 +1,5 @@
+numpy
+matplotlib
+scholarly
+tqdm
+click
