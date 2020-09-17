@@ -118,8 +118,8 @@ def create_extend_author_records(author_infos, output_directory):
 ##############
 
 @click.command()
-@click.option('--authors'           , '-a'  , multiple=True         , help="The name of the authors to track on google scholar.")
-@click.option('--author_list'       , '-al' , multiple=True         , help="Should point to a file of newline-character-separated author names.")
+@click.option('--authors'           , '-a'  , multiple=True         , help="The name of the authors to track on google scholar. Multiple uses possible")
+@click.option('--author_list'       , '-al' , multiple=True         , help="Should point to a file of newline-character-separated author names. Multiple uses possible")
 @click.option('--output_directory'  , '-o'  , default='./output'    , help="Output directory of the stats to collect. A file will be created or appended to, named after the authors' google scholar ids.")
 @click.option('--dry_run'           , '-d'  , is_flag=True          , help="Set this flag to only collect data without writing.")
 @click.option('--fetch_async'       , '-fa' , is_flag=True          , help="Set this flag to fetch author data asynchronously from the web. Default behaviour is sequential processing.")
