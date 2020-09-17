@@ -1,5 +1,5 @@
-#initates commented line parts
+#initiates commented line parts
 Sebastian Lapuschkin
 Wojciech Samek
-#Klaus-Robert Müller
-#Fabian Horst Mainz
+Klaus-Robert Müller
+Fabian Horst Mainz

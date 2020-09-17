@@ -45,8 +45,10 @@ def fetch_single_author_info(a):
             # all is fine.
             info = info[0]
 
-        # extend author info with additional stats and return
-        info.fill(sections=['counts', 'indices', 'publications'])
+        # TODO: add 'publications' once I figured out what to do with that.
+        # NOTE: 'publication' info takes (by far) the most time to requests
+        # add additional author info.
+        info.fill(sections=['counts', 'indices']) #, 'publications'])
         return info
 
 
@@ -62,6 +64,15 @@ def fetch_author_infos(authors, asynchronously=False):
     return [i for i in info if i] # return entries which are not None
 
 
+def create_extend_author_records(author_infos, output_directory, dry_run):
+    # make sure output dir and /authors subdir exists. (to later add /publications subdir)
+    # then create a file /authors/author-id which contains all the things.
+    # first line of file is a header (which may be updated later)
+    # then all info.
+    # maybe add read/update fxns
+    for a in author_infos:
+        print(a)
+        exit()
 
 ##############
 # ENTRY POINT
@@ -82,8 +93,17 @@ def main(authors, author_list, output_directory, dry_run, fetch_async, commit, k
         This allows for a more fine-grained tracking of citations compared to the yearly/current
         overview provided by google scholar itself.
     """
+    # collect authors and request author information from google scholar.
     authors += collect_authors_from_lists(author_list)
     author_infos = fetch_author_infos(authors, asynchronously=fetch_async)
+
+    if dry_run:
+        #abort after data collection
+        tqdm.write(colored('Flag "dry_run" has been set. Terminating after data collection.', 'yellow'))
+        exit()
+
+    # create or extend author records
+    create_extend_author_records(author_infos, output_directory)
 
     # request author info including counts.
     # if target file exists, append current count.
