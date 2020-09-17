@@ -132,6 +132,10 @@ def main(authors, author_list, output_directory, dry_run, fetch_async, commit, k
         This allows for a more fine-grained tracking of citations compared to the yearly/current
         overview provided by google scholar itself.
     """
+
+    # announce current time
+    tqdm.write(colored('Process starting at {}'.format(datetime.datetime.now()),'green'))
+
     # collect authors and request author information from google scholar.
     authors += collect_authors_from_lists(author_list)
     author_infos = fetch_author_infos(authors, asynchronously=fetch_async)
