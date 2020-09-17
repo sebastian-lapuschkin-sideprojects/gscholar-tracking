@@ -2,3 +2,4 @@
 .vscode
 *.pyc
 scholar.log
+geckodriver.log

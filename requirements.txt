@@ -3,3 +3,4 @@ matplotlib
 scholarly
 tqdm
 click
+termcolor
