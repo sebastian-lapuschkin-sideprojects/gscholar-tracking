@@ -82,7 +82,6 @@ def create_extend_author_records(author_infos, output_directory):
     # TODO maybe add read/update fxns
     today = datetime.datetime.today()
     datestring = '{}-{}-{}'.format(str(today.year).zfill(4), str(today.month).zfill(2), str(today.day).zfill(2))
-    print(datestring); exit()
     author_folder = '{}/authors'.format(output_directory)
 
     if not os.path.isdir(author_folder):
