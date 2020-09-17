@@ -1,4 +1,4 @@
 # David Neumann, Research Associate, Fraunhofer Institute for Telecommunications, Heinrich Hertz Institute …
 # datestring citations hindex i10index
 2019-12-31 1 none none
-2020-9-17 17 3 0
+2020-09-17 17 3 0

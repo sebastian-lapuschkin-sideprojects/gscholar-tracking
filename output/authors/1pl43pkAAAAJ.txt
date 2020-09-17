@@ -2,4 +2,4 @@
 # datestring citations hindex i10index
 2018-12-31 1 none none
 2019-12-31 9 none none
-2020-9-17 29 3 1
+2020-09-17 29 3 1

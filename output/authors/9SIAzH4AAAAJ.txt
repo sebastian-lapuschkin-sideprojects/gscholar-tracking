@@ -1,4 +1,4 @@
 # Christopher J. Anders, Machine Learning Group, Technische Universität Berlin
 # datestring citations hindex i10index
 2019-12-31 13 none none
-2020-9-17 50 3 2
+2020-09-17 50 3 2
