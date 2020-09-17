@@ -15,9 +15,9 @@ def collect_authors_from_lists(author_lists):
     for a in author_lists:
         assert os.path.isfile(a), "The given author list file '{}' is not a file!".format(a)
         with open(a, 'rt') as f:
-            # author name lists are expected to contain single full names per line
-            # the "#" character initiates comment sections in a line. only keep data until the first #
-            # discard empty line entries
+            # (a) author name lists are expected to contain single full names per line
+            # (b) the "#" character initiates comment sections in a line. only keep data until the first #
+            # (c) discard empty line entries
             author_list.extend([c for c in [b.split('#')[0] for b in f.read().split('\n')] if len(c) > 0])
     return tuple(author_list)
 
