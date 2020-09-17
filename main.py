@@ -147,7 +147,7 @@ def main(authors, author_list, output_directory, dry_run, fetch_async, commit, k
 
     if dry_run:
         #abort after data collection
-        tqdm.write(colored('Flag "dry_run" has been set. Printing collected data and terminating after data collection.', 'yellow'))
+        tqdm.write(colored('Flag "--dry_run" has been set. Printing collected data and terminating after data collection.', 'yellow'))
         for a in author_infos:
             tqdm.write(str(a))
         exit()
@@ -156,7 +156,7 @@ def main(authors, author_list, output_directory, dry_run, fetch_async, commit, k
     create_extend_author_records(author_infos, output_directory)
 
     if commit:
-        tqdm.write(colored('Auto-committing data updates in "{}" .'.format(output_directory), 'yellow'))
+        tqdm.write(colored('Flag "--commit" as been set. Auto-committing data updates in "{}" .'.format(output_directory), 'yellow'))
         os.system('git add {}'.format(output_directory))
         os.system('git commit -m "auto-commit of data at {}"'.format(datetime.datetime.now()))
 
