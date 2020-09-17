@@ -156,8 +156,10 @@ def main(authors, author_list, output_directory, dry_run, fetch_async, commit, k
     create_extend_author_records(author_infos, output_directory)
 
     if commit:
-        #os.system('git add {}'.format(output_directory))
-        print(output_directory)
+        tqdm.write(colored('Auto-committing data updates in "{}" .'.format(output_directory), 'yellow'))
+        os.system('git add {}'.format(output_directory))
+        os.system('git commit -m "auto-commit of data at {}"'.format(datetime.datetime.now()))
+
 
 # TODO: plotting/graphing
 # TODO: paper info handling
