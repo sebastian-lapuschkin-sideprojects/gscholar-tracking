@@ -1,0 +1,9 @@
+# Some Co-Authors not already covered by fhg-hhi-authors.txt
+Fabian Horst Mainz # Mainz required for disambiguation
+Klaus-Robert Müller
+Alexander Binder SUTD # SUTD required for disambiguation
+Christopher J Anders
+#
+#
+# THIS IS WIP
+# CONTINUE LATER

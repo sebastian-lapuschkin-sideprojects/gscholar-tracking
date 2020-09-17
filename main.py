@@ -123,7 +123,7 @@ def create_extend_author_records(author_infos, output_directory):
 @click.option('--output_directory'  , '-o'  , default='./output'    , help="Output directory of the stats to collect. A file will be created or appended to, named after the authors' google scholar ids.")
 @click.option('--dry_run'           , '-d'  , is_flag=True          , help="Set this flag to only collect data without writing.")
 @click.option('--fetch_async'       , '-fa' , is_flag=True          , help="Set this flag to fetch author data asynchronously from the web. Default behaviour is sequential processing.")
-@click.option('--commit'            , '-c'  , is_flag=True          , help="Set this flag to auto-add and commit any change in the given output directory to your local git.")
+@click.option('--commit'            , '-c'  , is_flag=True          , help="Set this flag to auto-add and commit any change in the given output directory to your CURRENT BRANCH and local git.")
 @click.option('--keep_log'          , '-k'  , is_flag=True          , help="Set this flag to keep the scholar.log created by scholarly")
 def main(authors, author_list, output_directory, dry_run, fetch_async, commit, keep_log):
     """
@@ -136,35 +136,30 @@ def main(authors, author_list, output_directory, dry_run, fetch_async, commit, k
     authors += collect_authors_from_lists(author_list)
     author_infos = fetch_author_infos(authors, asynchronously=fetch_async)
 
+    # clean up
+    if not keep_log:
+        try:
+            os.remove('scholar.log')
+            os.remove('geckodriver.log')
+        except:
+            pass
+
+
     if dry_run:
         #abort after data collection
-        tqdm.write(colored('Flag "dry_run" has been set. Terminating after data collection.', 'yellow'))
+        tqdm.write(colored('Flag "dry_run" has been set. Printing collected data and terminating after data collection.', 'yellow'))
+        for a in author_infos:
+            tqdm.write(str(a))
         exit()
 
     # create or extend author records
     create_extend_author_records(author_infos, output_directory)
 
-    # request author info including counts.
-    # if target file exists, append current count.
-    # if target file does not exist, populate previous time points (years) with year-counts
-    #
-    # Example code:
-    #
-    # a = list(scholarly.scholarly.search_author("Sebastian lapuschkin"))[0]
-    # a.fill(sections=['counts', 'indices', 'publications'])
-    #
-    # extend citation tracking to publications?
-    # create output_dir/authors for authors
-    # and    output_dir/publications for papers (normalize paper file names: no whitespace only ascii no cap.)
-    # treat both equally by appending cites and appearances
-    # first line contains meta info
-    # remaining lines contain date -> value pairs/groups
-    #
-    # after each run, attempt to remove scholar.log (if not specified otherwise via --keep-logs)
-    #
-    # later: plotting/graphing
+    if commit:
+        #os.system('git add {}'.format(output_directory))
+        print(output_directory)
 
-
-
+# TODO: plotting/graphing
+# TODO: paper info handling
 if __name__ == '__main__':
     main()

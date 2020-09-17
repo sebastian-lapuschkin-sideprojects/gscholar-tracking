@@ -1,0 +1,26 @@
+# Members of HHI
+Sebastian Lapuschkin
+Wojciech Samek
+Leila Arras
+Sören Becker
+Sebastian Bosse
+# Jackie Ma # no gscholar account
+# Arturo Marban # no gscholar account
+# Talmaj Marinc # no gscholar account
+# Thomas Meiers # no gscholar account
+David Neumann Fraunhofer # Fraunhofer required for disambiguation
+# Luis Oala # no gscholar account
+Ahmed Osman Fraunhofer HHI # Fraunhofer HHI required for disambiguation
+# Roman Rischke # no gscholar account
+# Detlef Ruschin # no gscholar account
+Felix Sattler
+Vignesh Srinivasan Fraunhofer HHI # Fraunhofer HHI required for disambiguation
+Nils Strodthoff
+# Patrick Wagner # no gscholar account
+# Eva Weicken # no gscholar account
+Markus Wenzel Fraunhofer HHI # Fraunhofer HHI required for disambiguation
+# Pablo Wiedemann # no gscholar account
+Simon Wiedemann Fraunhofer # Fraunhofer required for disambiguation
+# Daniel Becking # no gscholar account
+# Franz Motzkus # no gscholar account
+# Leander Weber # no gscholar account
