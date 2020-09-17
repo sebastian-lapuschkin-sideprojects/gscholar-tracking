@@ -1,0 +1,5 @@
+# Felix Sattler, Fraunhofer Heinrich Hertz Institute
+# datestring citations hindex i10index
+2018-12-31 2 none none
+2019-12-31 40 none none
+2020-9-17 141 4 3

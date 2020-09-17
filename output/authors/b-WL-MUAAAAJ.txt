@@ -1,0 +1,7 @@
+# Leila Arras, Research Associate, Fraunhofer HHI, Germany
+# datestring citations hindex i10index
+2016-12-31 7 none none
+2017-12-31 30 none none
+2018-12-31 114 none none
+2019-12-31 252 none none
+2020-9-17 369 5 5

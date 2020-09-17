@@ -1,0 +1,7 @@
+# Fabian Horst, Johannes Gutenberg-University Mainz (Germany)
+# datestring citations hindex i10index
+2016-12-31 1 none none
+2017-12-31 9 none none
+2018-12-31 20 none none
+2019-12-31 56 none none
+2020-9-17 97 5 5

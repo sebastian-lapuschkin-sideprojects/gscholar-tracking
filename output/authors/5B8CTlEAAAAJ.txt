@@ -1,0 +1,13 @@
+# Alexander Binder, Assistant Prof., Singapore University of Technology and Design (SUTD)
+# datestring citations hindex i10index
+2010-12-31 22 none none
+2011-12-31 69 none none
+2012-12-31 152 none none
+2013-12-31 243 none none
+2014-12-31 332 none none
+2015-12-31 406 none none
+2016-12-31 582 none none
+2017-12-31 866 none none
+2018-12-31 1402 none none
+2019-12-31 2585 none none
+2020-9-17 3769 20 39

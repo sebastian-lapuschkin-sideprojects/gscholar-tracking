@@ -1,0 +1,8 @@
+# Sebastian Lapuschkin (né Bach), Postdoctoral Research Associate, Fraunhofer Heinrich Hertz Institute
+# datestring citations hindex i10index
+2015-12-31 8 none none
+2016-12-31 116 none none
+2017-12-31 359 none none
+2018-12-31 874 none none
+2019-12-31 1967 none none
+2020-9-17 3025 15 19
