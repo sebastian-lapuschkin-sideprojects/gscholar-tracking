@@ -50,5 +50,5 @@ Options:
 
 I personally am running the tool, as a cron job, with
 ```
-python main.py -al fhg-hhi-authors.txt -al coauthors.txt -o /some/location -c -fa
+python main.py -al authorlists/fhg-hhi-authors.txt -al authorlists/coauthors.txt -o /some/location -c -fa
 ```
