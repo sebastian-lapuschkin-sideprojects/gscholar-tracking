@@ -35,10 +35,10 @@ def fetch_single_author_info(a):
             return None
         elif len(info) > 1:
             # warning: multiple matches
-            tqdm.write(colored('WARNING! Multiple ({}) entries for "{}" discovered: {}. Please specify author further! Returning first encountered entry for now.'.format(
+            tqdm.write(colored('WARNING! Multiple ({}) entries for "{}" discovered:\n{}\nPlease specify author further! Returning first encountered entry for now.'.format(
                         len(info),
                         a,
-                        ', '.join(['"{}@{}"'.format(i.name,i.affiliation) for i in info])
+                        '\n'.join(['({}) "{}@{}"'.format(i, ii.name,ii.affiliation) for i, ii in enumerate(info)])
                         ),
                         'yellow')
                         )
