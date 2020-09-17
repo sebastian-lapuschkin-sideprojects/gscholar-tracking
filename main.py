@@ -1,9 +1,11 @@
-import scholarly
-import multiprocessing
-from tqdm import tqdm
-from termcolor import colored
+import datetime
 import click
 import os
+import multiprocessing
+import scholarly
+from tqdm import tqdm
+from termcolor import colored
+
 
 ##############
 # UTILITY FXNS
@@ -64,15 +66,52 @@ def fetch_author_infos(authors, asynchronously=False):
     return [i for i in info if i] # return entries which are not None
 
 
-def create_extend_author_records(author_infos, output_directory, dry_run):
-    # make sure output dir and /authors subdir exists. (to later add /publications subdir)
-    # then create a file /authors/author-id which contains all the things.
-    # first line of file is a header (which may be updated later)
-    # then all info.
-    # maybe add read/update fxns
+def author_record_line_column_heads():
+    return 'datestring citations hindex i10index'
+
+def format_author_record_line(datestring, citedby, hindex='none', i10index='none'):
+    return'{} {} {} {}'.format(datestring, citedby, hindex, i10index)
+
+
+def create_extend_author_records(author_infos, output_directory):
+    # (1) make sure output dir and /authors subdir exists.
+    # (1.1) TODO:  later add /publications subdir
+    # (2) create/append to a file /authors/author-id which contains all the things.
+    # (2.1) first line of file is a header (which may be updated later)
+    # (2.2) then all info.
+    # TODO maybe add read/update fxns
+    today = datetime.datetime.today()
+    datestring = '{}-{}-{}'.format(today.year, today.month, today.day)
+    author_folder = '{}/authors'.format(output_directory)
+
+    if not os.path.isdir(author_folder):
+        tqdm.write('Creating author output folder {}'.format(author_folder))
+        os.makedirs(author_folder)
+
     for a in author_infos:
-        print(a)
-        exit()
+        author_id = a.id
+        author_file = '{}/{}.txt'.format(author_folder, author_id)
+        tqdm.write('Writing citation info for "{}" to "{}"'.format(a.name, author_file))
+
+        preamble = '' # optional preamble in case no preexisting file exists yet. this will contain sort-of static header info
+        if not os.path.isfile(author_file):
+            # prepare header info and past year(s) cites
+            # header first. here also, '#' works as a comment flag
+            preamble += '# {}, {}\n'.format(a.name, a.affiliation)
+            preamble += '# {}\n'.format(author_record_line_column_heads())
+            citedby = 0
+            for year in sorted(a.cites_per_year.keys()):
+                if year < today.year:
+                    citedby += a.cites_per_year[year]
+                    # set "past years" citation date to the last day of the year.
+                    preamble += '{}\n'.format(format_author_record_line('{}-{}-{}'.format(year, 12, 31), citedby=citedby))
+
+        # write the update with the (updated) preamble
+        with open(author_file, 'at') as f:
+            f.write('{}{}\n'.format(preamble, format_author_record_line(datestring, a.citedby, a.hindex, a.i10index)))
+
+
+
 
 ##############
 # ENTRY POINT
@@ -81,7 +120,7 @@ def create_extend_author_records(author_infos, output_directory, dry_run):
 @click.command()
 @click.option('--authors'           , '-a'  , multiple=True         , help="The name of the authors to track on google scholar.")
 @click.option('--author_list'       , '-al' , multiple=True         , help="Should point to a file of linebreak character separated author names.")
-@click.option('--output_directory'  , '-o'  , default='.'           , help="Output directory of the stats to collect. A file will be created or appended to, named after the authors' google scholar ids.")
+@click.option('--output_directory'  , '-o'  , default='./output'    , help="Output directory of the stats to collect. A file will be created or appended to, named after the authors' google scholar ids.")
 @click.option('--dry_run'           , '-d'  , is_flag=True          , help="Set this flag to only collect data without writing.")
 @click.option('--fetch_async'       , '-fa' , is_flag=True          , help="Set this flag to fetch author data asynchronously from the web. Default behaviour is sequential processing.")
 @click.option('--commit'            , '-c'  , is_flag=True          , help="Set this flag to auto-add and commit any change in the given output directory to your local git.")
