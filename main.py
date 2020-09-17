@@ -124,7 +124,7 @@ def create_extend_author_records(author_infos, output_directory):
 @click.option('--dry_run'           , '-d'  , is_flag=True          , help="Set this flag to only collect data without writing.")
 @click.option('--fetch_async'       , '-fa' , is_flag=True          , help="Set this flag to fetch author data asynchronously from the web. Default behaviour is sequential processing.")
 @click.option('--commit'            , '-c'  , is_flag=True          , help="Set this flag to auto-add and commit any change in the given output directory to your CURRENT BRANCH and local git.")
-@click.option('--keep_log'          , '-k'  , is_flag=True          , help="Set this flag to keep the scholar.log created by scholarly")
+@click.option('--keep_log'          , '-k'  , is_flag=True          , help="Set this flag to keep the scholar.log and geckodriver.log created by scholarly")
 def main(authors, author_list, output_directory, dry_run, fetch_async, commit, keep_log):
     """
         This script collects author information on google scholar and writes the respective
