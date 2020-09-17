@@ -1,7 +1,7 @@
 # A More Fine-Grained Tool for Google Scholar Stat Tracking
 Google scholar is tracking statistics such as citation counts for authors and papers. However, it only provides the number of total current citations, as well as the total citations of the current and past year. As someone who likes to watch lines go up, this was not enough *fine grained* info for me.
 
-Knowing that google scholar updates its stats page every second day, I have thus created this neat little tool to track the citation and citation index progression of my own and my colleagues' and co-authors' work. I am very aware, that this nothing else but a private d***k measuring contest ;)
+Knowing that google scholar updates its stats page every second day, I have thus created this neat little tool to track the citation and citation index progression of my own and my colleagues' and co-authors' work. I am very aware, that this is nothing else but a private d***k measuring contest ;)
 
 For now, I will let this tool run every second day and auto-commit stats as a cron job on a raspberry pi sitting at home.
 
