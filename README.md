@@ -10,7 +10,7 @@ In the near future, there will be an extension for tracking paper info (for all 
 At some later time, once enough dated data points have been gathered, I will add functionality to draw some neat lines.
 
 ## How to use this tool
-First, clone this repo. Then, `pip install -r requirements.txt` all required packages. The tool can then be neatly used from command line. The following help text should be self-explanatory.:
+First, clone this repo. Then, `pip install -r requirements.txt` all required packages. The tool can then be neatly used from command line. The following help text should be self-explanatory:
 ```
 $ python main.py --help
 Usage: main.py [OPTIONS]
