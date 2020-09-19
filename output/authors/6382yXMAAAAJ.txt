@@ -1,0 +1,9 @@
+# Philipp Seegerer, Doctoral Researcher, Machine Learning Group, TU Berlin
+# datestring citations hindex i10index
+2014-12-31 3 none none
+2015-12-31 20 none none
+2016-12-31 41 none none
+2017-12-31 59 none none
+2018-12-31 75 none none
+2019-12-31 150 none none
+2020-09-19 273 7 6

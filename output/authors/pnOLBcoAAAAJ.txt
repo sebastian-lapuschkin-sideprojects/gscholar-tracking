@@ -1,0 +1,6 @@
+# Maximilian Alber, TU Berlin
+# datestring citations hindex i10index
+2017-12-31 15 none none
+2018-12-31 92 none none
+2019-12-31 293 none none
+2020-09-19 491 7 6

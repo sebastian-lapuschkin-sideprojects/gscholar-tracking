@@ -1,0 +1,6 @@
+# Dr Jeroen Aeles, The University of Nantes
+# datestring citations hindex i10index
+2017-12-31 7 none none
+2018-12-31 29 none none
+2019-12-31 76 none none
+2020-09-19 106 5 4

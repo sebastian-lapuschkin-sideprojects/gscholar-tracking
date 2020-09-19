@@ -1,0 +1,16 @@
+# Cornelius Hellge, Head of Multimedia Communications Group, Fraunhofer HHI, Germany
+# datestring citations hindex i10index
+2007-12-31 11 none none
+2008-12-31 39 none none
+2009-12-31 68 none none
+2010-12-31 126 none none
+2011-12-31 205 none none
+2012-12-31 298 none none
+2013-12-31 417 none none
+2014-12-31 515 none none
+2015-12-31 637 none none
+2016-12-31 745 none none
+2017-12-31 846 none none
+2018-12-31 983 none none
+2019-12-31 1123 none none
+2020-09-19 1252 19 32

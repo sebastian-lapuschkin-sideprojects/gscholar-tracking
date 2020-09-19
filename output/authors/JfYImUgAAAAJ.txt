@@ -1,0 +1,18 @@
+# Francois Hug, Université de Nantes
+# datestring citations hindex i10index
+2005-12-31 22 none none
+2006-12-31 75 none none
+2007-12-31 127 none none
+2008-12-31 209 none none
+2009-12-31 348 none none
+2010-12-31 459 none none
+2011-12-31 706 none none
+2012-12-31 1000 none none
+2013-12-31 1361 none none
+2014-12-31 1816 none none
+2015-12-31 2332 none none
+2016-12-31 2910 none none
+2017-12-31 3573 none none
+2018-12-31 4469 none none
+2019-12-31 5245 none none
+2020-09-19 6005 45 110

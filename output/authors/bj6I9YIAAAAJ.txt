@@ -1,0 +1,10 @@
+# Seul-Ki Yeom, Technische Universität Berlin - Machine Learning Group
+# datestring citations hindex i10index
+2013-12-31 7 none none
+2014-12-31 17 none none
+2015-12-31 38 none none
+2016-12-31 56 none none
+2017-12-31 97 none none
+2018-12-31 140 none none
+2019-12-31 213 none none
+2020-09-19 298 8 6

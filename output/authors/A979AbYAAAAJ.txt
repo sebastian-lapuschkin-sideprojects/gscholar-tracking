@@ -1,0 +1,10 @@
+# Grégoire Montavon, Technische Universität Berlin
+# datestring citations hindex i10index
+2013-12-31 53 none none
+2014-12-31 130 none none
+2015-12-31 278 none none
+2016-12-31 520 none none
+2017-12-31 1056 none none
+2018-12-31 2102 none none
+2019-12-31 3924 none none
+2020-09-19 5682 24 35

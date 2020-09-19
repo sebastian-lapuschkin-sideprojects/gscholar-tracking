@@ -1,0 +1,8 @@
+# Kristof T. Schütt, Technische Universität Berlin
+# datestring citations hindex i10index
+2015-12-31 16 none none
+2016-12-31 38 none none
+2017-12-31 183 none none
+2018-12-31 651 none none
+2019-12-31 1454 none none
+2020-09-19 2449 14 16

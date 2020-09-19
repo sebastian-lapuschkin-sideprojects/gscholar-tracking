@@ -1,0 +1,7 @@
+# Miriam Hägele, Technische Universität Berlin
+# datestring citations hindex i10index
+2016-12-31 2 none none
+2017-12-31 4 none none
+2018-12-31 56 none none
+2019-12-31 149 none none
+2020-09-19 151 4 4

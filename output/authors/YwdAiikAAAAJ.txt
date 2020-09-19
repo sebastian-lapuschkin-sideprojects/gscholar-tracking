@@ -1,0 +1,9 @@
+# Marina Marie-Claire Höhne (née Vidovic), Post Doc machine learning, TU Berlin
+# datestring citations hindex i10index
+2014-12-31 1 none none
+2015-12-31 3 none none
+2016-12-31 10 none none
+2017-12-31 38 none none
+2018-12-31 61 none none
+2019-12-31 99 none none
+2020-09-19 129 5 4

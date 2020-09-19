@@ -1,0 +1,10 @@
+# Pieter-Jan Kindermans, Senior Research Scientist, Google Brain
+# datestring citations hindex i10index
+2013-12-31 30 none none
+2014-12-31 101 none none
+2015-12-31 179 none none
+2016-12-31 299 none none
+2017-12-31 523 none none
+2018-12-31 1040 none none
+2019-12-31 1881 none none
+2020-09-19 2805 20 27

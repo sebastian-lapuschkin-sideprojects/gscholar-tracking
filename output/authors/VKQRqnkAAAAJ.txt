@@ -1,0 +1,11 @@
+# Lilian Lacourpaille, Post doctorant, Université de Nantes
+# datestring citations hindex i10index
+2012-12-31 3 none none
+2013-12-31 20 none none
+2014-12-31 53 none none
+2015-12-31 118 none none
+2016-12-31 212 none none
+2017-12-31 335 none none
+2018-12-31 501 none none
+2019-12-31 677 none none
+2020-09-19 817 15 18
