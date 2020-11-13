@@ -5,6 +5,12 @@ import multiprocessing
 import scholarly
 from tqdm import tqdm
 from termcolor import colored
+import io
+import requests
+from PIL import Image
+import numpy as np
+import tctim
+
 
 
 ##############
@@ -153,7 +159,13 @@ def main(authors, author_list, output_directory, dry_run, fetch_async, commit, k
         #abort after data collection
         tqdm.write(colored('Flag "--dry_run" has been set. Printing collected data and terminating after data collection.', 'yellow'))
         for a in author_infos:
-            tqdm.write(str(a))
+            try:
+                img = Image.open(io.BytesIO(requests.get(a.url_picture).content))
+                tqdm.write(tctim.tctim(np.array(img)))
+            except:
+                #fail silently, if you must.
+                pass
+            tqdm.write(str(a) + '\n'*2)
         exit()
 
     # create or extend author records
