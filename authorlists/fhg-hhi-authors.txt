@@ -23,5 +23,5 @@ Markus Wenzel Fraunhofer HHI # Fraunhofer HHI required for disambiguation
 Simon Wiedemann Fraunhofer # Fraunhofer required for disambiguation
 # Daniel Becking # no gscholar account
 # Franz Motzkus # no gscholar account
-# Leander Weber # no gscholar account
+Leander Weber # no gscholar account
 Cornelius Hellge
