@@ -4,3 +4,4 @@ scholarly
 tqdm
 click
 termcolor
+-e git+git://github.com/chr5tphr/tctim#egg=tctim
