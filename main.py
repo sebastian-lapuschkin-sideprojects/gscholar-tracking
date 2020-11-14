@@ -140,10 +140,10 @@ def create_extend_author_records(author_infos, output_directory):
 ##############
 
 @click.command()
-@click.option('--authors'           , '-a'  , multiple=True         , help="The name of the authors to track on google scholar. Multiple uses possible")
-@click.option('--author_list'       , '-al' , multiple=True         , help="Should point to a file of newline-character-separated author names. Multiple uses possible")
+@click.option('--authors'           , '-a'  , multiple=True         , help="The name or google scholar id of the authors to track on google scholar. Multiple uses possible.")
+@click.option('--author_list'       , '-al' , multiple=True         , help="Should point to a file of newline-character-separated author names or ids. Multiple uses possible")
 @click.option('--output_directory'  , '-o'  , default='./output'    , help="Output directory of the stats to collect. A file will be created or appended to, named after the authors' google scholar ids.")
-@click.option('--dry_run'           , '-d'  , is_flag=True          , help="Set this flag to only collect data without writing.")
+@click.option('--dry_run'           , '-d'  , is_flag=True          , help="Set this flag to only collect data without writing. Prints the collected data to the terminal instead. Author search by name also prints the profile picture to console.")
 @click.option('--fetch_async'       , '-fa' , is_flag=True          , help="Set this flag to fetch author data asynchronously from the web. Default behaviour is sequential processing.")
 @click.option('--commit'            , '-c'  , is_flag=True          , help="Set this flag to auto-add and commit any change in the given output directory to your CURRENT BRANCH and local git.")
 @click.option('--keep_log'          , '-k'  , is_flag=True          , help="Set this flag to keep the scholar.log and geckodriver.log created by scholarly")
