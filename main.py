@@ -177,6 +177,7 @@ def main(authors, author_list, output_directory, dry_run, fetch_async, commit, k
         for a in author_infos:
             try:
                 img = Image.open(io.BytesIO(requests.get(a.url_picture).content))
+                img.thumbnail((64,64))  # smallify
                 tqdm.write(tctim.tctim(np.array(img)))
             except:
                 #fail silently, if you must.
