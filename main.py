@@ -32,11 +32,11 @@ def collect_authors_from_lists(author_lists):
 
 def fetch_single_author_info(a):
         # fetch basic info of single author name or id
+        a = a.strip() #clean dangling whitespaces.
         tqdm.write('Collecting info for "{}"'.format(a))
 
         info = []
         if len([seg for seg in a.split() if len(seg) > 0]) == 1:
-            print('id resolution')
             # attempt resolution after unique, whitespaceless id first
             # however, this for some weird reason does not return the url_picture property yet
             # cf https://github.com/scholarly-python-package/scholarly/issues/214
@@ -44,7 +44,6 @@ def fetch_single_author_info(a):
             if info: info = [info]
 
         if not info:
-            print('name resolution')
             # resolution of id not attempted or succesfull.
             # trying for author resolution by name
             info = list(scholarly.scholarly.search_author(a))
