@@ -6,7 +6,6 @@ Leila Arras
 Sebastian Bosse
 # Jackie Ma # no gscholar account
 # Arturo Marban # no gscholar account
-# Talmaj Marinc # no gscholar account
 # Thomas Meiers # no gscholar account
 David Neumann Fraunhofer # Fraunhofer required for disambiguation
 # Luis Oala # no gscholar account
@@ -19,8 +18,6 @@ Nils Strodthoff
 # Patrick Wagner # no gscholar account
 # Eva Weicken # no gscholar account
 Markus Wenzel Fraunhofer HHI # Fraunhofer HHI required for disambiguation
-# Pablo Wiedemann # no gscholar account
-Simon Wiedemann Fraunhofer # Fraunhofer required for disambiguation
 # Daniel Becking # no gscholar account
 # Franz Motzkus # no gscholar account
 Leander Weber
