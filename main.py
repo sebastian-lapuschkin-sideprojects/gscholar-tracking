@@ -58,7 +58,7 @@ def fetch_single_author_info(a):
             tqdm.write(colored('WARNING! Multiple ({}) entries for "{}" discovered:\n{}\nPlease specify author further! Returning first encountered entry for now.'.format(
                         len(info),
                         a,
-                        '\n'.join(['({}) "{}@{}"'.format(i, ii.name,ii.affiliation) for i, ii in enumerate(info)])
+                        '\n'.join(['({}) "{}@{}" (id:{})'.format(i, ii.name,ii.affiliation,ii.id) for i, ii in enumerate(info)])
                         ),
                         'yellow')
                         )
