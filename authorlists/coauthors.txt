@@ -11,7 +11,7 @@ Marina Vidovic
 Pieter-Jan Kindermans
 Sven Dähne
 Maximilian Kohlbrenner
-Maximilian Alber TU Berlin # TU Berlin required for disambiguation. Still two entries for TUB
+pnOLBcoAAAAJ # Maximilian Alber TU Berlin
 Kristof T. Schütt
 Wolfgang I. Schöllhorn
 Jiamei Sun SUTD # SUTD required for disambiguation
