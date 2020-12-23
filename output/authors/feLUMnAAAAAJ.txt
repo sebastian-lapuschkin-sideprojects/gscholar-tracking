@@ -1,0 +1,8 @@
+# Roman Rischke, Fraunhofer Heinrich Hertz Institute
+# datestring citations hindex i10index
+2015-12-31 2 none none
+2016-12-31 7 none none
+2017-12-31 10 none none
+2018-12-31 24 none none
+2019-12-31 43 none none
+2020-12-23 66 6 3
