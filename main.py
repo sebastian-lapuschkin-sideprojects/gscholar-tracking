@@ -58,7 +58,7 @@ def fetch_single_author_info(a):
             tqdm.write(colored('WARNING! Multiple ({}) entries for "{}" discovered:\n{}\nPlease specify author further! Returning first encountered entry for now.'.format(
                         len(info),
                         a,
-                        '\n'.join(['({}) "{}@{}" (id:{})'.format(i, ii.name,ii.affiliation,ii.id) for i, ii in enumerate(info)])
+                        '\n'.join(['({}) "{}@{}" (id:{})'.format(i, ii['name'],ii['affiliation'],ii['scholar_id']) for i, ii in enumerate(info)])
                         ),
                         'yellow')
                         )
@@ -71,7 +71,7 @@ def fetch_single_author_info(a):
         # TODO: add 'publications' once I figured out what to do with that.
         # NOTE: 'publication' info takes (by far) the most time to requests
         # add additional author info.
-        info.fill(sections=['counts', 'indices']) #, 'publications'])
+        info = scholarly.scholarly.fill(info, sections=['counts', 'indices']) #, 'publications'])
         return info
 
 
@@ -110,15 +110,15 @@ def create_extend_author_records(author_infos, output_directory):
         os.makedirs(author_folder)
 
     for a in author_infos:
-        author_id = a.id
+        author_id = a['scholar_id']
         author_file = '{}/{}.txt'.format(author_folder, author_id)
-        tqdm.write('Writing citation info for "{}" to "{}"'.format(a.name, author_file))
+        tqdm.write('Writing citation info for "{}" to "{}"'.format(a['name'], author_file))
 
         preamble = '' # optional preamble in case no preexisting file exists yet. this will contain sort-of static header info
         if not os.path.isfile(author_file):
             # prepare header info and past year(s) cites
             # header first. here also, '#' works as a comment flag
-            preamble += '# {}, {}\n'.format(a.name, a.affiliation)
+            preamble += '# {}, {}\n'.format(a['name'], a['affiliation'])
             preamble += '# {}\n'.format(author_record_line_column_heads())
             citedby = 0
             for year in sorted(a.cites_per_year.keys()):
@@ -129,7 +129,7 @@ def create_extend_author_records(author_infos, output_directory):
 
         # write the update with the (updated) preamble
         with open(author_file, 'at') as f:
-            f.write('{}{}\n'.format(preamble, format_author_record_line(datestring, a.citedby, a.hindex, a.i10index)))
+            f.write('{}{}\n'.format(preamble, format_author_record_line(datestring, a['citedby'], a['hindex'], a['i10index'])))
 
 
 
@@ -175,7 +175,7 @@ def main(authors, author_list, output_directory, dry_run, fetch_async, commit, k
         tqdm.write(colored('Flag "--dry_run" has been set. Printing collected data and terminating after data collection.', 'yellow'))
         for a in author_infos:
             try:
-                img = Image.open(io.BytesIO(requests.get(a.url_picture).content))
+                img = Image.open(io.BytesIO(requests.get(a['url_picture']).content))
                 img.thumbnail((64,64))  # smallify
                 tqdm.write(tctim.tctim(np.array(img)))
             except:

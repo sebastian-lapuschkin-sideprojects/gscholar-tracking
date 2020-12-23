@@ -1,6 +1,6 @@
 numpy
 matplotlib
-scholarly
+scholarly==1.0.2
 tqdm
 click
 termcolor
