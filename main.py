@@ -72,6 +72,9 @@ def fetch_single_author_info(a):
         # NOTE: 'publication' info takes (by far) the most time to requests
         # add additional author info.
         info = scholarly.scholarly.fill(info, sections=['counts', 'indices']) #, 'publications'])
+        # manually add default author icon if no author url is given in profile
+        if not 'url_picture' in info:
+            info['url_picture'] = 'https://scholar.google.com/citations?view_op=medium_photo&user={}'.format(info['scholar_id'])
         return info
 
 
