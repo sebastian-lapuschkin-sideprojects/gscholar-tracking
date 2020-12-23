@@ -124,9 +124,9 @@ def create_extend_author_records(author_infos, output_directory):
             preamble += '# {}, {}\n'.format(a['name'], a['affiliation'])
             preamble += '# {}\n'.format(author_record_line_column_heads())
             citedby = 0
-            for year in sorted(a.cites_per_year.keys()):
+            for year in sorted(a['cites_per_year'].keys()):
                 if year < today.year:
-                    citedby += a.cites_per_year[year]
+                    citedby += a['cites_per_year'][year]
                     # set "past years" citation date to the last day of the year.
                     preamble += '{}\n'.format(format_author_record_line('{}-{}-{}'.format(year, 12, 31), citedby=citedby))
 
