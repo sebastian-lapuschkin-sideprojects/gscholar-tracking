@@ -1,33 +1,33 @@
 # Some Co-Authors not already covered by fhg-hhi-authors.txt
-Fabian Horst Mainz # Mainz required for disambiguation
-Klaus-Robert Müller
-Alexander Binder SUTD # SUTD required for disambiguation
-Christopher J Anders
-Grégoire Montavon
-Frederick Klauschen
-Philipp Seegerer
-Miriam Hägele
-Marina Vidovic
-Pieter-Jan Kindermans
-Sven Dähne
-Maximilian Kohlbrenner
-pnOLBcoAAAAJ # Maximilian Alber TU Berlin
-Kristof T. Schütt
-Wolfgang I. Schöllhorn
-Jiamei Sun SUTD # SUTD required for disambiguation
+BEEULrIAAAAJ
+jplQac8AAAAJ
+5B8CTlEAAAAJ
+9SIAzH4AAAAJ
+A979AbYAAAAJ
+yqaK-D8AAAAJ
+6382yXMAAAAJ
+qx1K3OoAAAAJ
+YwdAiikAAAAJ
+FpI8dFwAAAAJ
+Kc8zXcgAAAAJ
+OBkYYhsAAAAJ
+pnOLBcoAAAAJ
+0e49RfgAAAAJ
+vgqiO4EAAAAJ
+LeeCrowAAAAJ
 # Irene Sturm # no gscholar account
 # Stephan Wäldchen # no gscholar account
-Jeroen Aeles
-Francois Hug
-Lilian Lacourpaille
-Seul-Ki Yeom
-Alexander Bauer TU Berlin # TU Berlin required for disambiguation
-Shinichi Nakajima
-Djordje Slijepcevic
+IcKKQ2EAAAAJ
+JfYImUgAAAAJ
+VKQRqnkAAAAJ
+bj6I9YIAAAAJ
+OsFeXfIAAAAJ
+hXSvID4AAAAJ
+faWNz2YAAAAJ
 # Anna-Maria Raberger # no gscholar account
-Matthias Zeppelzauer
-Christian Breiteneder
-Brian Horsak
+eNVwKNkAAAAJ
+AvNBy7MAAAAJ
+XIgceWIAAAAJ
 # Pablo Wiedemann # no gscholar account
-LkL6zeYAAAAJ # Simon Wiedemann
+LkL6zeYAAAAJ
 # Talmaj Marinc # no gscholar account
