@@ -38,9 +38,11 @@ def fetch_single_author_info(a):
         info = []
         if len([seg for seg in a.split() if len(seg) > 0]) == 1:
             # attempt resolution after unique, whitespaceless id first
-            # however, this for some weird reason does not return the url_picture property yet
-            # cf https://github.com/scholarly-python-package/scholarly/issues/214
-            info = scholarly.scholarly.search_author_id(a)
+            try:
+                info = scholarly.scholarly.search_author_id(a)
+            except:
+                # capturing exception in case an invalid author id has been passed
+                pass
             if info: info = [info]
 
         if not info:
