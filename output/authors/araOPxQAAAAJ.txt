@@ -1,0 +1,10 @@
+# Marina Marie-Claire Höhne (née Vidovic), Technical University of Berlin Machine Learning
+# datestring citations hindex i10index
+2014-12-31 1 none none
+2015-12-31 3 none none
+2016-12-31 11 none none
+2017-12-31 39 none none
+2018-12-31 62 none none
+2019-12-31 104 none none
+2020-12-31 142 none none
+2021-04-11 160 5 5
