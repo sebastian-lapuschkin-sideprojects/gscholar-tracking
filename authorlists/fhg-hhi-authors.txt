@@ -1,25 +1,22 @@
 # Members of HHI
-wpLQuroAAAAJ
-7aQwO08AAAAJ
-b-WL-MUAAAAJ
+wpLQuroAAAAJ # Sebastian Lapuschkin
+7aQwO08AAAAJ # Wojciech Samek
+b-WL-MUAAAAJ # Leila Arras
+B7MAebQAAAAJ # Sebastian Bosse
+PpxeBNcAAAAJ # Arturo Marban
+_6m7dh8AAAAJ # David Neumann
+v3ybnf0AAAAJ # Luis Oala
+feLUMnAAAAAJ # Roman Rischke
+2EwscoEAAAAJ # Vignesh Srinivasan
+Y7HmexQAAAAJ # Nils Strodthoff
+fdqFZbUAAAAJ # Patrick Wagner
+iEss3jQAAAAJ # Markus Wenzel
+9iCPs2AAAAAJ # Daniel Becking # no gscholar account
+qJFNfEcAAAAJ # Leander Weber
+Bb3G13cAAAAJ # Cornelius Hellge
 # Sören Becker # no gscholar account for Fraunhofer HHI's Sören Becker
-B7MAebQAAAAJ
 # Jackie Ma # no gscholar account
-PpxeBNcAAAAJ
 # Thomas Meiers # no gscholar account
-_6m7dh8AAAAJ
-v3ybnf0AAAAJ
-1pl43pkAAAAJ
-feLUMnAAAAAJ
 # Detlef Ruschin # no gscholar account
-CccYpkEAAAAJ
-2EwscoEAAAAJ
-Y7HmexQAAAAJ
-fdqFZbUAAAAJ
 # Eva Weicken # no gscholar account
-iEss3jQAAAAJ
-# Daniel Becking # no gscholar account
 # Franz Motzkus # no gscholar account
-qJFNfEcAAAAJ
-Bb3G13cAAAAJ
-

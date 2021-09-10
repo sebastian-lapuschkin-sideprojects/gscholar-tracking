@@ -1,31 +1,33 @@
 # Some Co-Authors not already covered by fhg-hhi-authors.txt
-BEEULrIAAAAJ
-jplQac8AAAAJ
-5B8CTlEAAAAJ
-9SIAzH4AAAAJ
-A979AbYAAAAJ
-yqaK-D8AAAAJ
-6382yXMAAAAJ
-qx1K3OoAAAAJ
-YwdAiikAAAAJ
-FpI8dFwAAAAJ
-Kc8zXcgAAAAJ
-OBkYYhsAAAAJ
-pnOLBcoAAAAJ
-0e49RfgAAAAJ
-vgqiO4EAAAAJ
-LeeCrowAAAAJ
+BEEULrIAAAAJ # Fabian Horst
+jplQac8AAAAJ # Klaus-Robert Müller
+5B8CTlEAAAAJ # Alexander Binder
+9SIAzH4AAAAJ # Christopher J Anders
+A979AbYAAAAJ # Grégoire Montavon
+yqaK-D8AAAAJ # Frederick Klauschen
+6382yXMAAAAJ # Philipp Seegerer
+qx1K3OoAAAAJ # Miriam Hägele
+YwdAiikAAAAJ # Marina Marie-Claire Höhne
+FpI8dFwAAAAJ # Pieter-Jan Kindermans
+Kc8zXcgAAAAJ # Sven Dähne
+OBkYYhsAAAAJ # Maximilian Kohlbrenner
+pnOLBcoAAAAJ # Maximilian Alber
+0e49RfgAAAAJ # Kristof T Schütt
+vgqiO4EAAAAJ # Wolfgang I Schöllhorn
+LeeCrowAAAAJ # Sun Jiamei
+me6yCJYAAAAJ # Stephan Wäldchen # no gscholar account
+IcKKQ2EAAAAJ # Jeroen Aeles
+JfYImUgAAAAJ # Francois Hug
+VKQRqnkAAAAJ # Lilian Lacourpaille
+bj6I9YIAAAAJ # Seul-Ki Yeom
+OsFeXfIAAAAJ # Alexander Bauer
+hXSvID4AAAAJ # Shinichi Nakajima
+faWNz2YAAAAJ # Djordje Slijepcevic
+eNVwKNkAAAAJ # Matthias Zeppelzauer
+AvNBy7MAAAAJ # Christian Breiteneder
+XIgceWIAAAAJ # Brian Horsak
+LkL6zeYAAAAJ # Simon Wiedemann
+1pl43pkAAAAJ # Ahmed Osman
+CccYpkEAAAAJ # Felix Sattler
 # Irene Sturm # no gscholar account
-# Stephan Wäldchen # no gscholar account
-IcKKQ2EAAAAJ
-JfYImUgAAAAJ
-VKQRqnkAAAAJ
-bj6I9YIAAAAJ
-OsFeXfIAAAAJ
-hXSvID4AAAAJ
-faWNz2YAAAAJ
 # Anna-Maria Raberger # no gscholar account
-eNVwKNkAAAAJ
-AvNBy7MAAAAJ
-XIgceWIAAAAJ
-LkL6zeYAAAAJ
