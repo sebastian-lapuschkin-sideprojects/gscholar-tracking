@@ -50,3 +50,7 @@ I personally am running the tool, as a cron job, as
 ```
 python3 main.py -al authorlists/fhg-hhi-authors.txt -al authorlists/coauthors.txt -o /some/location -c -fa
 ```
+
+When running with `-d` or `--dry_run`, author information is collected, but not written to disk. Instead the author info is shown for, e.g., making sure the right author has been identified, in case of author name ambiguites.
+
+![dry-run-demo](./resources/demo.gif)
