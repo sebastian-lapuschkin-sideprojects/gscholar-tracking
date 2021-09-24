@@ -134,7 +134,7 @@ def create_extend_author_records(author_infos, output_directory):
 
         # write the update with the (updated) preamble
         with open(author_file, 'at') as f:
-            f.write('{}{}\n'.format(preamble, format_author_record_line(datestring, a['citedby'], a['hindex'], a['i10index'])))
+            f.write('{}{}\n'.format(preamble, format_author_record_line(datestring, a['citedby'] if 'citedby' in a else 0, a['hindex'], a['i10index'])))
 
 
 
