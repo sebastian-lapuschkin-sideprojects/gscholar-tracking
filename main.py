@@ -146,24 +146,26 @@ def load_and_plot(authors, data_dir, plot_show, plot_file):
     data = {}
     for a in authors:
         a = a.strip()
-        with open('{}/authors/{}.txt'.format(data_dir,a)) as f:
-            lines = f.read().replace('#','').strip().split('\n')
-            name, affiliation = lines[0].split(',',1)
-            date = []; citations = []; h_index = []; i10_index = []
-            for line in lines[2::]:
-                d,c,h,i = line.split()
-                date.append(d)
-                citations.append(int(c))
-                h_index.append(0 if h == 'none' else int(h))
-                i10_index.append(0 if i == 'none' else int(i))
+        author_file = '{}/authors/{}.txt'.format(data_dir,a)
+        if author_file:
+            with open(author_file) as f:
+                lines = f.read().replace('#','').strip().split('\n')
+                name, affiliation = lines[0].split(',',1)
+                date = []; citations = []; h_index = []; i10_index = []
+                for line in lines[2::]:
+                    d,c,h,i = line.split()
+                    date.append(d)
+                    citations.append(int(c))
+                    h_index.append(0 if h == 'none' else int(h))
+                    i10_index.append(0 if i == 'none' else int(i))
 
-            data[name] = {'affiliation': affiliation,
-                          'scholar_id': a,
-                          'date'    :  np.array([datetime.datetime.strptime(di, '%Y-%m-%d').timestamp() for di in date]),
-                          'date_str':  np.array(date),
-                          'citations': np.array(citations),
-                          'h_index':   np.array(h_index),
-                          'i10_index': np.array(i10_index)
+                data[name] = {'affiliation': affiliation,
+                            'scholar_id': a,
+                            'date'    :  np.array([datetime.datetime.strptime(di, '%Y-%m-%d').timestamp() for di in date]),
+                            'date_str':  np.array(date),
+                            'citations': np.array(citations),
+                            'h_index':   np.array(h_index),
+                            'i10_index': np.array(i10_index)
                             }
 
     # draw plots (rudimentary. TODO: upgrade! see ideas in @click at main)
@@ -216,7 +218,7 @@ def load_and_plot(authors, data_dir, plot_show, plot_file):
 @click.option('--fetch_async'       , '-fa' , is_flag=True          , help="Set this flag to fetch author data asynchronously from the web. Default behaviour is sequential processing.")
 @click.option('--commit'            , '-c'  , is_flag=True          , help="Set this flag to auto-add and commit any change in the given output directory to your CURRENT BRANCH and local git.")
 @click.option('--keep_log'          , '-k'  , is_flag=True          , help="Set this flag to keep the scholar.log and geckodriver.log created by scholarly")
-@click.option('--plot'              , '-p'  , is_flag=True          , help="Set this flag to draw plots for the already collected data in <output_directory>. Collection of new data is then skipped. This is only compatible with author IDs!")
+@click.option('--plot'              , '-p'  , is_flag=True          , help="Set this flag to draw plots for the already collected data for authors as specified via -a or -al, and saved in <output_directory>. Collection of new data is then skipped. This is only compatible with author IDs!")
 @click.option('--plot_show'         , '-ps' , is_flag=True          , help="Only relevant if --plot has been set. Shows the plotted data.")
 @click.option('--plot_file'         , '-pf' , default=None          , help="Only relevant if --plot has been set. Output path of the figure to draw.")
 #TODO plotting parameters:
