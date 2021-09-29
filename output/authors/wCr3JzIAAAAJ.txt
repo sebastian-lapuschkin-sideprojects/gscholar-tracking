@@ -1,0 +1,5 @@
+# Frederik Pahde, SAP SE
+# datestring citations hindex i10index
+2019-12-31 10 none none
+2020-12-31 30 none none
+2021-09-29 49 5 2

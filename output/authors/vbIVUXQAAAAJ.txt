@@ -1,0 +1,4 @@
+# Johanna Vielhaben, Fraunhofer HHI
+# datestring citations hindex i10index
+2020-12-31 3 none none
+2021-09-29 6 1 0
