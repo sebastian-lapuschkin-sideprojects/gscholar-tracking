@@ -1,0 +1,8 @@
+# Kristoffer Wickstrøm, PhD candidate UiT The Arctic University of Norway
+# datestring citations hindex i10index
+2018-12-31 4 none none
+2019-12-31 32 none none
+2020-12-31 85 none none
+2021-12-31 182 none none
+2022-02-21 200 5 4
+2022-02-23 202 6 4
