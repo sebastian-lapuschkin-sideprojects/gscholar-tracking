@@ -2,3 +2,4 @@
 # datestring citations hindex i10index
 2021-12-31 11 none none
 2022-06-19 22 1 1
+2022-06-21 22 1 1

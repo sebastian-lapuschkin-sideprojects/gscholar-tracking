@@ -1,3 +1,4 @@
 # Sami Ede, Technical University of Berlin
 # datestring citations hindex i10index
 2022-06-19 0 0 0
+2022-06-21 0 0 0
