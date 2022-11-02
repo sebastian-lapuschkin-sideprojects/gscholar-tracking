@@ -5,6 +5,11 @@ from tqdm import tqdm
 import multiprocessing
 from termcolor import colored
 
+
+##############
+# UTILITY FXNS
+##############
+
 def collect_authors_from_lists(author_lists):
     """ Load from autor list files into a single list of author names """
     author_list = []
