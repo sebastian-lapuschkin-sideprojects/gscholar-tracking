@@ -74,6 +74,5 @@ def main(authors, author_list, output_directory, dry_run, fetch_async, commit, k
         os.system('git add {}'.format(output_directory))
         os.system('git commit -m "auto-commit of data at {}"'.format(datetime.datetime.now()))
 
-# TODO: paper info handling
 if __name__ == '__main__':
     main()

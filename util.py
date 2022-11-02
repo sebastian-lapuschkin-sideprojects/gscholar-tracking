@@ -63,8 +63,6 @@ def fetch_single_author_info(a):
             # all is fine.
             info = info[0]
 
-        # TODO: add 'publications' once I figured out what to do with that.
-        # NOTE: 'publication' info takes (by far) the most time to requests
         # add additional author info.
         info = scholarly.scholarly.fill(info, sections=['counts', 'indices']) #, 'publications'])
         # manually add default author icon if no author url is given in profile
@@ -94,11 +92,9 @@ def format_author_record_line(datestring, citedby, hindex='none', i10index='none
 
 def create_extend_author_records(author_infos, output_directory):
     # (1) make sure output dir and /authors subdir exists.
-    # (1.1) TODO:  later add /publications subdir
     # (2) create/append to a file /authors/author-id which contains all the things.
     # (2.1) first line of file is a header (which may be updated later)
     # (2.2) then all info.
-    # TODO maybe add read/update fxns
     today = datetime.datetime.today()
     datestring = '{}-{}-{}'.format(str(today.year).zfill(4), str(today.month).zfill(2), str(today.day).zfill(2))
     author_folder = '{}/authors'.format(output_directory)
