@@ -8,8 +8,6 @@ import numpy as np
 from PIL import Image
 from tqdm import tqdm
 from termcolor import colored
-import matplotlib.pyplot as plt
-from dateutil.relativedelta import relativedelta
 
 from util import create_extend_author_records
 from util import collect_authors_from_lists
