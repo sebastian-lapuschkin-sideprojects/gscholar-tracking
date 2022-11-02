@@ -1,17 +1,9 @@
-import io
 import os
-import click
-import tctim
 import datetime
-import requests
 import scholarly
-import numpy as np
-from PIL import Image
 from tqdm import tqdm
 import multiprocessing
 from termcolor import colored
-import matplotlib.pyplot as plt
-from dateutil.relativedelta import relativedelta
 
 def collect_authors_from_lists(author_lists):
     """ Load from autor list files into a single list of author names """
