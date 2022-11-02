@@ -7,7 +7,7 @@ from termcolor import colored
 import matplotlib.pyplot as plt
 from dateutil.relativedelta import relativedelta
 
-from util import collect_authors_from_lists
+from util import collect_authors_from_lists, check_if_data_available_for
 
 
 
@@ -44,7 +44,7 @@ def plot(authors, author_list, author_record_dir, output_file, list, show, what,
     # announce current time
     tqdm.write(colored('Data visualization process starting at {}'.format(datetime.datetime.now()), 'green'))
 
-    # provide an overview over available data.
+    # provide an overview over available data if requested, then exit.
     if list:
         tqdm.write('Checking "{}" for data...'.format(author_record_dir))
         author_files = [x for x in os.listdir(author_record_dir) if os.path.isfile(os.path.join(author_record_dir, x)) and x.endswith('.txt')]
@@ -53,6 +53,27 @@ def plot(authors, author_list, author_record_dir, output_file, list, show, what,
             with open(os.path.join(author_record_dir,a)) as f:
                 print('>  ', os.path.splitext(a)[0], ':', f.readline().lstrip(' #').rstrip())
         exit()
+
+    # collect specified author files and test availability.
+    authors += collect_authors_from_lists(author_list)
+    authors = check_if_data_available_for(authors, author_record_dir)
+
+
+    # TODO load author data.
+
+    # TODO select desired measurements as values to be visualized ("what")
+
+
+    # process values as desired ("how")
+
+
+    # optionally filter by time (TODO)
+    pass
+
+    # draw plot
+
+
+    # show or safe.
 
     # collect authors and request author information from google scholar.
     # authors += collect_authors_from_lists(author_list)

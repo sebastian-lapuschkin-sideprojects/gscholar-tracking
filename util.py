@@ -19,7 +19,7 @@ def collect_authors_from_lists(author_lists):
             # (a) author name lists are expected to contain single full names per line
             # (b) the "#" character initiates comment sections in a line. only keep data until the first #
             # (c) discard empty line entries
-            author_list.extend([c for c in [b.split('#')[0] for b in f.read().split('\n')] if len(c) > 0])
+            author_list.extend([c.strip() for c in [b.split('#')[0] for b in f.read().split('\n')] if len(c) > 0])
     return tuple(author_list)
 
 
@@ -125,3 +125,43 @@ def create_extend_author_records(author_infos, output_directory):
         with open(author_file, 'at') as f:
             if not 'citedby' in a: a['citedby'] = 0 # set citedby-field of yet uncited author
             f.write('{}{}\n'.format(preamble, format_author_record_line(datestring, a['citedby'], a['hindex'], a['i10index'])))
+
+
+
+
+def check_if_data_available_for(authors, directory):
+    # checks if data (files) are already available for the selected authors by
+    # 1) first checking if a file name exists (ie if there is a google scholar ID match)
+    # 2) and double-checks if necessary by asking scholarly.
+    # returns (and replaces) all author IDs as google scholar ids
+
+    invalids = [] # collect entries with no data available.
+
+    # convert authors to list to allow for manipulation
+    authors = list(authors)
+    for i in range(len(authors)):
+        a = authors[i]
+
+        # 1) check for filename matches
+        path = os.path.join(directory, a+'.txt')
+        if os.path.isfile(os.path.join(path)):
+            continue
+
+        # 2) no match. consulting scholarly. if success replace entry with scholar id
+        # TODO update to support asynchronous fetching. export into separate check-and-replace loop. for now, keep it.
+        scholar_info = fetch_single_author_info(a)
+        if scholar_info:
+            a = scholar_info['scholar_id']
+            authors[i] = a
+
+            path = os.path.join(directory, a+'.txt')
+            if os.path.isfile(os.path.join(path)):
+                continue
+
+        # 3) still no match shoot warning and collect author for removal
+        tqdm.write(colored('WARNING! No recorded author data available for {}. Removing from plotting selection.'.format(a), 'yellow'))
+        invalids.append(a)
+
+    # clean up author list of invalid entries before returning
+    # TODO make selection unique by temporarily casting to set?
+    return tuple([a for a in authors if a not in invalids])
