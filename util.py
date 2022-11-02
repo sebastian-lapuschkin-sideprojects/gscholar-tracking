@@ -93,7 +93,7 @@ def format_author_record_line(datestring, citedby, hindex='none', i10index='none
 def create_extend_author_records(author_infos, output_directory):
     # (1) make sure output dir and /authors subdir exists.
     # (2) create/append to a file /authors/author-id which contains all the things.
-    # (2.1) first line of file is a header (which may be updated later)
+    # (2.1) first line of file is a header (TODO which may be updated later automatically)
     # (2.2) then all info.
     today = datetime.datetime.today()
     datestring = '{}-{}-{}'.format(str(today.year).zfill(4), str(today.month).zfill(2), str(today.day).zfill(2))
