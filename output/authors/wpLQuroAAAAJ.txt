@@ -15,7 +15,6 @@
 2020-03-20 2218 none none
 2020-04-21 2307 none none
 2020-05-12 2400 none none
-2020-06-13 2500 none none
 2020-06-13 2617 none none
 2020-08-04 2811 none none
 2020-08-26 2916 none none
