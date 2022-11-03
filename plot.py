@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 from dateutil.relativedelta import relativedelta
 
 from util import collect_authors_from_lists, check_if_data_available_for
+from util import load_author_data, desparsify_time_series_data
 
 
 
@@ -16,7 +17,7 @@ from util import collect_authors_from_lists, check_if_data_available_for
 ##############
 
 whats = ['cited', 'h', 'i10']
-hows  = ['plain', 'delta', 'growth_year', 'growth_month' ]
+hows  = ['plain', 'delta_year', 'delta_month', 'growth_year', 'growth_month' ]
 #times = ['relative', 'absolute'] # all sorts of timing options. let's start with a just absolute handling.
 
 @click.command()
@@ -30,7 +31,7 @@ hows  = ['plain', 'delta', 'growth_year', 'growth_month' ]
 @click.option('--how'               , '-h'  , default=hows[0]               , help="How to present the data? default: {} . all options: {}".format(hows[0], hows))
 #@click.option('--time'              , '-t')
 @click.option('--figsize'           , '-fs' , default=(3,3)                 , help="Specifies the size of generated figure.")
-#TODO --list to list existing entries in the output folder.
+#TODO --how and --what should be multiple=True fields
 #TODO, maybe plotting parameters:
 # --t_min (plot from a min absolute/relative time on (make it months?)) (absolute if both min and max are given)
 # --t_max (plot until a max absolute/relative time on (make it months?))
@@ -58,23 +59,29 @@ def plot(authors, author_list, author_record_dir, output_file, list, show, what,
     authors += collect_authors_from_lists(author_list)
     authors = check_if_data_available_for(authors, author_record_dir)
 
+    # load author data.
+    author_data = load_author_data(authors, author_record_dir)
 
-    # TODO load author data.
+    # fill time series data wrt common time frames.
+    # TODO optionally filter by time as second parameter.
+    # TODO resolve time-zone dependently added duplicates during pre- and postpending.
+    author_data = desparsify_time_series_data(author_data)
+
 
     # TODO select desired measurements as values to be visualized ("what")
 
 
-    # process values as desired ("how")
+    # TODO process values as desired ("how")
 
-
-    # optionally filter by time (TODO)
     pass
 
-    # draw plot
+    # TODO draw plots
 
 
-    # show or safe.
+    # TODO show or safe.
 
+
+    # OLD CODE BELOW
     # collect authors and request author information from google scholar.
     # authors += collect_authors_from_lists(author_list)
     # if plot:
