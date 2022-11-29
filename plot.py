@@ -37,6 +37,7 @@ hows  = ['plain', 'delta_year', 'delta_month', 'growth_year', 'growth_month' ]
 # --t_max (plot until a max absolute/relative time on (make it months?))
 # --cmap (default: no idea. pick something suitable.)
 # all sorts of marker and line styles.... rather use config file?
+# --test
 def plot(authors, author_list, author_record_dir, output_file, list, show, what, how, figsize):
     """
         This script collects (already downloaded) author information from google scholar located on the disc
