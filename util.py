@@ -210,7 +210,7 @@ def load_author_data(author_ids, directory):
     return author_data
 
 
-def desparsify_time_series_data(author_data, some_filter_options=None):
+def desparsify_time_series_data(author_data, filters={}):
     # fills in each authors measurement gaps in a day-accurate way over a commonly spanned sequence of time.
     # returns the now densely populated measures for any next steps.
 
@@ -329,9 +329,7 @@ def desparsify_time_series_data(author_data, some_filter_options=None):
             a['date_str'] = np.concatenate((a['date_str'], date_str_post), axis=0)
             a['citations'] = np.concatenate((a['citations'], citations_post), axis=0)
             a['h_index'] = np.concatenate((a['h_index'], h_index_post), axis=0)
-            a['i10_index'] = np.concatenate((a['i10_index'], i10_index_post), axis=0)
-
-
+            a['i10_index'] = np.concatenate((a['i10_index'], i10_index_post), axis=0) 
     # TODO CLEAN OUT TIME-ZOME DEPENDENTLY ADDED REDUNDANT DATES.
 
     return author_data

@@ -31,8 +31,9 @@ hows_format = {'plain':'{}', 'delta_year':'{:+}', 'delta_month':'{:+}', 'growth_
 @click.option('--show'              , '-s'  , is_flag=True                  , help="Shows the plotted data.")
 @click.option('--what'              , '-w'  , default=whats[0]              , help="What data to plot? default: {} . all options: {}".format(whats[0], whats))
 @click.option('--how'               , '-h'  , default=hows[0]               , help="How to present the data? default: {} . all options: {}".format(hows[0], hows))
-#@click.option('--time'              , '-t')
-@click.option('--figsize'           , '-figs' , default=5                 , help="Specifies the size of generated figure.")
+@click.option('--min_date'          , '-mnd', default=None                  , help="min date. plot no date earlier than this date, to be given in %Y-%m-%d format.")
+@click.option('--max_date'          , '-mxd', default=None                  , help="max date. plot no date later than this date, to be given in %Y-%m-%d format.")
+@click.option('--figsize'           , '-figs' , default=5                   , help="Specifies the size of generated figure.")
 @click.option('--fontsize'          , '-fs'  , default=8                    , help="Specifies the size of fonts used in the figure.")
 @click.option('--num_xticks'        , '-nx' , default=5                     , help="Number of euqually spaced x-ticks. can be int or strings (TODO: 'year', 'month')")
 #TODO --how and --what should be multiple=True fields
@@ -42,7 +43,7 @@ hows_format = {'plain':'{}', 'delta_year':'{:+}', 'delta_month':'{:+}', 'growth_
 # --cmap (default: no idea. pick something suitable.)
 # all sorts of marker and line styles.... rather use config file?
 # --test
-def plot(authors, author_list, author_record_dir, output_file, list, show, what, how, figsize, fontsize, num_xticks):
+def plot(authors, author_list, author_record_dir, output_file, list, show, what, how, min_date, max_date, figsize, fontsize, num_xticks):
     """
         This script collects (already downloaded) author information from google scholar located on the disc
     """
@@ -68,7 +69,6 @@ def plot(authors, author_list, author_record_dir, output_file, list, show, what,
     author_data = load_author_data(authors, author_record_dir)
 
     # fill time series data wrt common time frames.
-    # TODO optionally filter by time as second parameter.
     # TODO resolve time-zone dependently added duplicates during pre- and postpending.
     author_data = desparsify_time_series_data(author_data)
 
@@ -84,6 +84,29 @@ def plot(authors, author_list, author_record_dir, output_file, list, show, what,
     # process values as desired ("how")
     for a in author_data:
         a['value'] = process_values(a['value'], how_to_process=how)
+
+    # apply some filters on the data.
+    # TODO extract into own function with additional filters popping up over time
+    for a in author_data:
+        if min_date is not None:
+            min_date_timestamp = datetime.datetime.strptime(min_date, '%Y-%m-%d').timestamp()
+            not_too_old_idx = a['date'] >= min_date_timestamp
+            a['date'] = a['date'][not_too_old_idx]
+            a['date_str'] = a['date_str'][not_too_old_idx]
+            a['citations'] = a['citations'][not_too_old_idx]
+            a['h_index'] = a['h_index'][not_too_old_idx]
+            a['i10_index'] = a['i10_index'][not_too_old_idx]
+            a['value'] = a['value'][not_too_old_idx]
+            
+        if max_date is not None:
+            max_date_timestamp = datetime.datetime.strptime(max_date, '%Y-%m-%d').timestamp()
+            not_too_new_idx = a['date'] <= max_date_timestamp
+            a['date'] = a['date'][not_too_new_idx]
+            a['date_str'] = a['date_str'][not_too_new_idx]
+            a['citations'] = a['citations'][not_too_new_idx]
+            a['h_index'] = a['h_index'][not_too_new_idx]
+            a['i10_index'] = a['i10_index'][not_too_new_idx]
+            a['value'] = a['value'][not_too_new_idx]
 
     # draw plots
     fig = plt.figure(figsize=(figsize, figsize))
