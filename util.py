@@ -335,3 +335,45 @@ def desparsify_time_series_data(author_data, some_filter_options=None):
     # TODO CLEAN OUT TIME-ZOME DEPENDENTLY ADDED REDUNDANT DATES.
 
     return author_data
+
+
+def process_values(values, how_to_process):
+    def plain(values):
+        return values
+
+    def delta_year(values): # assume 1 year = 365 days
+        if len(values) < 365:
+            return np.zeros_like(values) # the unlikely case of having recording data of less than a year in this case.
+        else:
+            tmp = values[365::] - values[0:-365:]
+            return np.concatenate([np.zeros((365,),dtype=int),tmp], axis=0)
+
+    def delta_month(values): # assume 1 year = 28 days
+        if len(values) < 28:
+            return np.zeros_like(values) # the unlikely case of having recording data of less than a year in this case.
+        else:
+            tmp = values[28::] - values[0:-28:]
+            return np.concatenate([np.zeros((28,),dtype=int),tmp], axis=0)
+
+    def growth_year(values): # assume 1 year = 365 days. return values in percent
+        if len(values) < 365:
+            return np.zeros_like(values) # the unlikely case of having recording data of less than a year in this case.
+        else:
+            tmp = (values[365::] / values[0:-365:]) - 1
+            tmp[np.isnan(tmp)] = 0
+            return np.concatenate([np.zeros((365,),dtype=int),tmp], axis=0) * 100
+
+    def growth_month(values): # assume 1 year = 28 days. return values in percent
+        if len(values) < 28:
+            return np.zeros_like(values) # the unlikely case of having recording data of less than a year in this case.
+        else:
+            tmp = (values[28::] / values[0:-28:]) - 1
+            tmp[np.isnan(tmp)] = 0
+            return np.concatenate([np.zeros((28,),dtype=int),tmp], axis=0) * 100
+
+    switchmap = {'plain': plain,
+                 'delta_year': delta_year,
+                 'delta_month':delta_month,
+                 'growth_year':growth_year,
+                 'growth_month':growth_month}
+    return switchmap[how_to_process](values)

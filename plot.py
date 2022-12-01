@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from dateutil.relativedelta import relativedelta
 
 from util import collect_authors_from_lists, check_if_data_available_for
-from util import load_author_data, desparsify_time_series_data
+from util import load_author_data, desparsify_time_series_data, process_values
 
 
 
@@ -17,20 +17,24 @@ from util import load_author_data, desparsify_time_series_data
 ##############
 
 whats = ['cited', 'h', 'i10']
+whats_keys = {'cited':'citations', 'h': 'h_index', 'i10':'i10_index'} # translates cmi inputs to datastructure keys
 hows  = ['plain', 'delta_year', 'delta_month', 'growth_year', 'growth_month' ]
+hows_format = {'plain':'{}', 'delta_year':'{:+}', 'delta_month':'{:+}', 'growth_year':'{:+.2f}%', 'growth_month':'{:+.2f}%'}# format specifications for plotting collected values
 #times = ['relative', 'absolute'] # all sorts of timing options. let's start with a just absolute handling.
 
 @click.command()
 @click.option('--authors'           , '-a'  , multiple=True                 , help="The name or google scholar id of the authors to visualize. Multiple uses possible.")
 @click.option('--author_list'       , '-al' , multiple=True                 , help="Should point to a file of newline-character-separated author names or ids. Multiple uses possible")
-@click.option('--author_record_dir' , '-ad' , default='./output/authors/'    , help="Shuold point at the folder containing all the pre-collected author data.")
+@click.option('--author_record_dir' , '-ad' , default='./output/authors/'   , help="Shuold point at the folder containing all the pre-collected author data.")
 @click.option('--output_file'       , '-o'  , default='./plot.png'          , help="Output file of the stats to collect. Only produces file if set.")
 @click.option('--list'              , '-l'  , is_flag=True                  , help="Causes the script -- instead of plotting -- to list all the available author info(s) in the available files.")
 @click.option('--show'              , '-s'  , is_flag=True                  , help="Shows the plotted data.")
 @click.option('--what'              , '-w'  , default=whats[0]              , help="What data to plot? default: {} . all options: {}".format(whats[0], whats))
 @click.option('--how'               , '-h'  , default=hows[0]               , help="How to present the data? default: {} . all options: {}".format(hows[0], hows))
 #@click.option('--time'              , '-t')
-@click.option('--figsize'           , '-fs' , default=(3,3)                 , help="Specifies the size of generated figure.")
+@click.option('--figsize'           , '-figs' , default=5                 , help="Specifies the size of generated figure.")
+@click.option('--fontsize'          , '-fs'  , default=8                    , help="Specifies the size of fonts used in the figure.")
+@click.option('--num_xticks'        , '-nx' , default=5                     , help="Number of euqually spaced x-ticks. can be int or strings (TODO: 'year', 'month')")
 #TODO --how and --what should be multiple=True fields
 #TODO, maybe plotting parameters:
 # --t_min (plot from a min absolute/relative time on (make it months?)) (absolute if both min and max are given)
@@ -38,7 +42,7 @@ hows  = ['plain', 'delta_year', 'delta_month', 'growth_year', 'growth_month' ]
 # --cmap (default: no idea. pick something suitable.)
 # all sorts of marker and line styles.... rather use config file?
 # --test
-def plot(authors, author_list, author_record_dir, output_file, list, show, what, how, figsize):
+def plot(authors, author_list, author_record_dir, output_file, list, show, what, how, figsize, fontsize, num_xticks):
     """
         This script collects (already downloaded) author information from google scholar located on the disc
     """
@@ -68,18 +72,58 @@ def plot(authors, author_list, author_record_dir, output_file, list, show, what,
     # TODO resolve time-zone dependently added duplicates during pre- and postpending.
     author_data = desparsify_time_series_data(author_data)
 
+    # TODO might be necessary on some instances to get unique valkues for some the entries.
+    #print(author_data[0].keys())
+    #print(len(author_data[0]['date_str']))
+    #print(len(np.unique(author_data[0]['date_str'])))
 
-    # TODO select desired measurements as values to be visualized ("what")
+    # select desired measurements as values to be visualized ("what")
+    for a in author_data:
+        a['value'] = a[whats_keys[what]]
 
+    # process values as desired ("how")
+    for a in author_data:
+        a['value'] = process_values(a['value'], how_to_process=how)
 
-    # TODO process values as desired ("how")
+    # draw plots
+    fig = plt.figure(figsize=(figsize, figsize))
+    for a in author_data:
+        p = plt.plot(
+            a['date'],
+            a['value'],
+            #marker='s', #make this optional
+            label='{} ({})'.format(a['name'], a['scholar_id'])
+        )
+        a['plot_color'] = p[0].get_color()
 
-    pass
+    for a in author_data:
+        plt.text(x=a['date'][-1],
+                 y=a['value'][-1],
+                 s='{} ->'.format(hows_format[how].format(a['value'][-1])),
+                 color=a['plot_color'],
+                 backgroundcolor=[1,1,1,0.5],
+                 va='center', 
+                 ha='right')
 
-    # TODO draw plots
+    # define decoration
+    # TODO better way to figure out x-ticks to select and show. parameter? see commented code below.
+    tick_indices    = np.linspace(start=0,
+                              stop=len(author_data[0]['date'])-1,
+                              num=num_xticks,
+                              dtype=int) #assume all dates align
+    x_ticks         = author_data[0]['date'][tick_indices]
+    x_tick_labels   = author_data[0]['date_str'][tick_indices]
 
 
     # TODO show or safe.
+    plt.xticks(x_ticks, x_tick_labels, rotation=45, ha='center',fontsize=fontsize)
+    plt.yticks(fontsize=fontsize)
+    plt.ylabel(how,fontsize=fontsize)
+    plt.xlabel('date',fontsize=fontsize)
+    plt.title('{} {}'.format(whats_keys[what], how))
+
+    plt.legend(fontsize=fontsize)
+    plt.show()
 
 
     # OLD CODE BELOW
