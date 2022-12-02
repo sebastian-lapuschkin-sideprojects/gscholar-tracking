@@ -11,7 +11,10 @@ At some later time, once enough dated data points have been gathered, I will add
 
 ## How to use this tool
 First, clone this repo. Then, call `bash install.sh`, which in turn will install all required packages via `pip`.
+
+#### Collecting Data
 The tool can then be neatly used from command line. The following help text should be self-explanatory:
+
 ```
 $ python main.py --help
 Usage: main.py [OPTIONS]
@@ -46,7 +49,7 @@ Options:
   --help                       Show this message and exit.
 ```
 
-I personally am running the tool, as a cron job, as
+I personally am running the tool as a cron job, as
 ```
 python3 main.py -al authorlists/fhg-hhi-authors.txt -al authorlists/coauthors.txt -o /some/location -c -fa
 ```
@@ -54,3 +57,64 @@ python3 main.py -al authorlists/fhg-hhi-authors.txt -al authorlists/coauthors.tx
 When running with `-d` or `--dry_run`, author information is collected, but not written to disk. Instead the author info is shown for, e.g., making sure the right author has been identified, in case of author name ambiguites.
 
 ![dry-run-demo](./resources/demo.gif)
+
+
+### Visualizing Collected Data
+The file `plot.py` has been written as a rudimentary visualization script for showing the collected data (with lots of room for improvement):
+
+```
+$ python plot.py --help
+Usage: plot.py [OPTIONS]
+
+  This script collects (already downloaded) author information from google
+  scholar located on the disc
+
+Options:
+  -a, --authors TEXT             The name or google scholar id of the authors
+                                 to visualize. Multiple uses possible.
+
+  -al, --author_list TEXT        Should point to a file of newline-character-
+                                 separated author names or ids. Multiple uses
+                                 possible
+
+  -ad, --author_record_dir TEXT  Shuold point at the folder containing all the
+                                 pre-collected author data.
+
+  -o, --output_file TEXT         Output file of the stats to collect. Only
+                                 produces file if set.
+
+  -l, --list                     Causes the script -- instead of plotting --
+                                 to list all the available author info(s) in
+                                 the available files.
+
+  -s, --show                     Shows the plotted data.
+  -w, --what TEXT                What data to plot? default: cited . all
+                                 options: ['cited', 'h', 'i10']
+
+  -h, --how TEXT                 How to present the data? default: plain . all
+                                 options: ['plain', 'delta_year',
+                                 'delta_month', 'growth_year', 'growth_month']
+
+  -mnd, --min_date TEXT          min date. plot no date earlier than this
+                                 date, to be given in %Y-%m-%d format.
+
+  -mxd, --max_date TEXT          max date. plot no date later than this date,
+                                 to be given in %Y-%m-%d format.
+
+  -figs, --figsize INTEGER       Specifies the size of generated figure.
+  -fs, --fontsize INTEGER        Specifies the size of fonts used in the
+                                 figure.
+
+  -nx, --num_xticks INTEGER      Number of euqually spaced x-ticks. can be int
+                                 or strings (TODO: 'year', 'month')
+
+  --help                         Show this message and exit.
+```
+
+The example call
+```
+python plot.py -a "Leander Weber" -a 9SIAzH4AAAAJ -a ldOYtBUAAAAJ -a "Marina Vidovic" -mnd 2020-12-01 -mxd 2022-12-01 --fontsize 7
+```
+shows plain citation numbers in a bi-daily resolution for a select group of researchers, some of which are identified by google scholar id (and thus directly read from disk) and some of which are resolved by the scholarly package by name, from december 2020 to december 2022, as shown below:
+
+![example-plot](./resources/plot.png)
