@@ -5,7 +5,8 @@ Knowing that google scholar updates its stats page every second day, I have thus
 
 For now, I will let this tool run every second day and auto-commit stats as a cron job on a raspberry pi sitting at home.
 
-In the near future, there will be an extension for tracking paper info (for all authors?). This will probably require some more sparse data logging, to avoid an explosion of text data.
+~~In the near future, there will be an extension for tracking paper info (for all authors?). This will probably require some more sparse data logging, to avoid an explosion of text data.~~
+With the number of papers for all authors growing as it does, such a request by far exceeds the google scholar API qouta. Thus, this planned feature will be scrapped.
 
 At some later time, once enough dated data points have been gathered, I will add functionality to draw some neat lines.
 
