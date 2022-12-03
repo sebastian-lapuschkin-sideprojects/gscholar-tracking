@@ -1,0 +1,12 @@
+# Lena  A. Jäger, Associate Professor, University of Zurich, Department of Computational Linguistics
+# datestring citations hindex i10index
+2013-12-31 6 none none
+2014-12-31 20 none none
+2015-12-31 60 none none
+2016-12-31 110 none none
+2017-12-31 167 none none
+2018-12-31 229 none none
+2019-12-31 352 none none
+2020-12-31 509 none none
+2021-12-31 709 none none
+2022-12-03 986 15 17

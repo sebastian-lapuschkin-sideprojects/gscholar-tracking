@@ -1,0 +1,27 @@
+# Peter Eisert, Professor Visual Computing, Humboldt University Berlin, Fraunhofer HHI
+# datestring citations hindex i10index
+1998-12-31 22 none none
+1999-12-31 75 none none
+2000-12-31 149 none none
+2001-12-31 236 none none
+2002-12-31 346 none none
+2003-12-31 460 none none
+2004-12-31 593 none none
+2005-12-31 747 none none
+2006-12-31 866 none none
+2007-12-31 1008 none none
+2008-12-31 1136 none none
+2009-12-31 1306 none none
+2010-12-31 1515 none none
+2011-12-31 1759 none none
+2012-12-31 2047 none none
+2013-12-31 2342 none none
+2014-12-31 2624 none none
+2015-12-31 2903 none none
+2016-12-31 3229 none none
+2017-12-31 3533 none none
+2018-12-31 3873 none none
+2019-12-31 4288 none none
+2020-12-31 4809 none none
+2021-12-31 5262 none none
+2022-12-03 5743 37 113

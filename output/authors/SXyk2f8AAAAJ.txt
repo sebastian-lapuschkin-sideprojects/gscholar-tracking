@@ -1,0 +1,13 @@
+# Joachim Krois, Head of Data Science, Oral Diagnostics & Digital Health & Health Services Research, Charité - Universitätsmedzin Berlin
+# datestring citations hindex i10index
+2012-12-31 7 none none
+2013-12-31 21 none none
+2014-12-31 45 none none
+2015-12-31 73 none none
+2016-12-31 101 none none
+2017-12-31 138 none none
+2018-12-31 204 none none
+2019-12-31 322 none none
+2020-12-31 694 none none
+2021-12-31 1530 none none
+2022-12-03 2594 23 36

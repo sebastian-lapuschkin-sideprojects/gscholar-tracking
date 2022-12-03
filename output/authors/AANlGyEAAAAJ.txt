@@ -1,0 +1,5 @@
+# Michael Gerstenberger, Unknown affiliation
+# datestring citations hindex i10index
+2020-12-31 20 none none
+2021-12-31 95 none none
+2022-12-03 176 2 1

@@ -1,0 +1,12 @@
+# Paul Prasse, University of Potsdam
+# datestring citations hindex i10index
+2013-12-31 3 none none
+2014-12-31 4 none none
+2015-12-31 8 none none
+2016-12-31 18 none none
+2017-12-31 28 none none
+2018-12-31 41 none none
+2019-12-31 56 none none
+2020-12-31 89 none none
+2021-12-31 130 none none
+2022-12-03 217 8 7

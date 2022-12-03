@@ -1,0 +1,10 @@
+# Simon M. Hofmann, Doctoral Researcher, Max Planck Institute for Human Cognitive and Brain Sciences, Fraunhofer Institute Heinrich Hertz
+# datestring citations hindex i10index
+2015-12-31 4 none none
+2016-12-31 13 none none
+2017-12-31 26 none none
+2018-12-31 41 none none
+2019-12-31 56 none none
+2020-12-31 75 none none
+2021-12-31 95 none none
+2022-12-03 130 5 4

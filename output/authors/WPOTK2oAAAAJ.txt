@@ -1,0 +1,16 @@
+# Veronica Witte, University of Leipzig Medical Center, Clinic of Cognitive Neurology, and MPI-CBS Leipzig
+# datestring citations hindex i10index
+2009-12-31 31 none none
+2010-12-31 88 none none
+2011-12-31 184 none none
+2012-12-31 284 none none
+2013-12-31 438 none none
+2014-12-31 638 none none
+2015-12-31 912 none none
+2016-12-31 1251 none none
+2017-12-31 1618 none none
+2018-12-31 2088 none none
+2019-12-31 2648 none none
+2020-12-31 3373 none none
+2021-12-31 4354 none none
+2022-12-03 5671 38 74
